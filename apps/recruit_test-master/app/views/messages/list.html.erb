@@ -1,0 +1,20 @@
+<% content_for :title do %>Messages<% end %>
+<h3 style="float:left">Here are the messages for <%= @user.name %></h3>
+<h4><button class="create_message_btn">Create Message</button></h4>
+<h6 style="float:left">Click on any message subject to view its body</h6><br />
+
+<div style="clear:both;"></div>
+
+<div id="message_list" style="float:left; width:30%">
+	<%= render "message_form" %><br />
+    <%= render "message_list" %>
+</div>
+
+
+<div class="message_box">
+  <h4>Message Box</h4>
+  <div class="message_show" id="message_show"></div>
+</div>
+
+
+

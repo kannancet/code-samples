@@ -1,0 +1,23 @@
+h1 Parsing Log
+table.table.table-striped id="parsing_area" 
+  thead
+    tr
+      th Parsing Log Id
+      th Started At
+      th Total Rows Suceeded
+      th Total Rows Fails
+      th Total Rows Parsed
+      th Status
+  tbody
+    - @log.each do |log|
+      tr
+        td= "##{log.id} "
+        td= log.created_at
+        td id="success_rows#{log.id}" 
+          = suceeded_rows(log)
+        td id="failed_rows#{log.id}"
+          = failed_rows(log)
+        td id="total_rows#{log.id}"
+          = total_rows(log)
+        td id="status#{log.id}"
+          = log.status

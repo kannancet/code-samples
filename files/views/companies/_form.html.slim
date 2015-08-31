@@ -1,0 +1,19 @@
+= form_for @company, :html => { :class => "form-horizontal company" } do |f|
+  - if @company.errors.any?
+    #error_expl.panel.panel-danger
+      .panel-heading
+        h3.panel-title
+          = pluralize(@company.errors.count, "error")
+          | prohibited this company from being saved:
+      .panel-body
+        ul
+          - @company.errors.full_messages.each do |msg|
+            li= msg
+  .control-group
+    = f.label :name, :class => 'control-label'
+    .controls
+      = f.text_field :name, :class => 'form-control'
+    = error_span(@company[:name])
+  = f.submit nil, :class => 'btn btn-primary'
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), \
+    companies_path, :class => 'btn btn-default'                  \

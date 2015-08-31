@@ -1,0 +1,11 @@
+table.table.table-striped style=("border: 1;") 
+  thead
+    tr
+      th Company Id
+      th Company Name
+      th Action
+  tbody
+    - @companies.each do |company|
+      = render "company_row_single", company: company
+      tr id="company_info#{company.id}" 
+= paginate @companies

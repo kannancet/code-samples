@@ -1,0 +1,11 @@
+form#upload_form action="operations/upload" enctype="multipart/form-data" method="post" multipart="true" 
+  input#upload_file_name name="upload_file" required="" type="file" /
+  br/
+  input.btn.btn-success type="submit" value=("Upload File to Server") /
+br/
+#upload_area style="display:none;" 
+  p.upload_text Upload Progress ....
+  .progress
+    .bar
+    .percent 0%
+  #status

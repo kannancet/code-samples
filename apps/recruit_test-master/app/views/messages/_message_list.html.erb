@@ -1,0 +1,5 @@
+<% @messages.each do |message| %>
+  <p><a href="#" data-messageid="<%= message.id%>" class="single_message"> <%= message.id %>. <%= message.subject %></a>
+  		<%= hidden_field_tag "message_body_#{message.id}", message.body %>
+  </p>
+<% end %>

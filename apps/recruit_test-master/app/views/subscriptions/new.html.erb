@@ -1,0 +1,17 @@
+<h2>Plan Name: <span><%= @plan.name %></h2>
+<%= form_tag "#", id: "payment_form" do %>
+
+    <ul>
+      <li class="amount"> Plan Features: <span><%= @plan.features %></span></li><br/>
+      <li class="amount"> Plan Price: <h4><span id="plan_price"><%= @plan.price %></span> &nbsp;<%= select_tag 'user_currency', options_for_select(@currencies.map{ |key, val| ["#{key} - #{val}", key]}, :selected=>"USD") %></h4></li><br/>
+      <%= hidden_field_tag "target_plan", @plan.id %>
+      <%= hidden_field_tag "stripe_plan", @plan.stripe_id %>
+      <%= hidden_field_tag "user_email", current_user.email %>
+      <%= hidden_field_tag "stripeToken", "" %>    
+
+    </ul>
+
+<%= submit_tag "make payment", class: "btn btn-lg btn-block btn-success", id: "make_payment" %>
+<% end %>
+
+

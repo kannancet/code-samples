@@ -1,0 +1,23 @@
+.row
+  .col-md-4
+    h2
+      strong Operations
+  .col-md-8.padddown20
+    = link_to "Download as CSV", download_csv_path(company.id, query="*"), :id => "download_csv#{company.id}", :class => "btn btn-primary pull-right"
+
+
+tr= render "operation_search_area", company: company
+table.table.table-striped
+  thead
+    tr
+      th Invoice Id
+      th Invoice Number
+      th Invoice Date
+      th Reporter
+  tbody id="operations_body"
+    - company.operations.each do |operation|
+      tr
+        td= "##{operation.id} "
+        td= operation.invoice_num
+        td= operation.invoice_date
+        td= operation.reporter

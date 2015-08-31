@@ -1,0 +1,12 @@
+<%# add navigation links to this file %>
+<li><%= link_to 'Users', users_list_path %></li>
+<!--<li><%= link_to 'Messages', main_app.messages_list_path %></li>-->
+<li><%= link_to 'Subscription', plans_path %></li>
+<li><%= link_to 'About', page_path('about') %></li>
+<% unless user_signed_in? %>
+	<li><%= link_to 'Sign In', new_user_session_path %></li>
+	<li><%= link_to 'Sign Up', new_user_registration_path %></li>
+<% else %>
+   <li><%= link_to 'Logout', destroy_user_session_path %></li>
+<% end %>
+<li><%= link_to current_user.email, "#" if current_user%></li>

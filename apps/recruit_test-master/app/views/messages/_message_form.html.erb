@@ -1,0 +1,10 @@
+<%= form_tag("#", method: "post", id: "add_message_form", style: "display: none") do %>
+  <%= label_tag(:add_user, "Add Message:") %><br/>
+  Subject:<br/>
+  <%= text_field_tag("subject") %><br/>
+  Body:<br/>
+  <%= text_area_tag("body") %><br/>
+  <%= hidden_field_tag("user_id", @user.id) %>
+  <%= submit_tag("Add", id: "submit_message") %>
+  <%= button_tag("Close", id: "close_message") %>
+<% end %>

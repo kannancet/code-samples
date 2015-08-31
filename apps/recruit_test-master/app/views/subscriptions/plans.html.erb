@@ -1,0 +1,33 @@
+<div class="container">
+	<div class="row">
+		 <% @plans.each_with_index do |plan, index| %>
+			 <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+			<!-- PRICE ITEM -->
+				<div class="panel price <%= plan_color(plan)[index][0]%>">
+					<div class="panel-heading  text-center">
+					<h3><%= plan.name.upcase %></h3>
+					</div>
+					<div class="panel-body text-center">
+						<p class="lead" style="font-size:40px"><strong>$<%= plan.price%> / month</strong></p>
+					</div>
+					<ul class="list-group list-group-flush text-center">
+					    <% plan.features.split("\n\n").each do |feature| %>
+						  <li class="list-group-item"><i class="icon-ok text-danger"></i><%= feature %></li>
+						<% end %>
+					</ul>
+					<div class="panel-footer">
+						 <a class="btn btn-lg btn-block <%= plan_color(plan)[index][1]%>" href="<%= plan_href_text(plan)[:href]%>" id="plan_<%= plan.id%>"><%= plan_href_text(plan)[:text]%></a>
+
+						 <% if current_user && (subs = current_user.subscription) && (subs.plan_id == plan.id)%>
+						  <h3 class="text-primary text-center">OR</h3>
+						   <a class="btn btn-lg btn-block <%= activation_href_text(subs)[:color]%>" href="<%= activation_href_text(subs)[:href]%>" ><%= activation_href_text(subs)[:text]%>
+						   </a>
+						 <% end %>
+					</div>
+				</div>
+				<!-- /PRICE ITEM -->
+			 </div>	
+		<% end %>		
+	</div>
+            
+</div>

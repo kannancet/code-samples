@@ -1,0 +1,21 @@
+- model_class = Company
+.page-header
+  h1 Companies Dashboard
+  = link_to "Upload Operations", "#", class: "btn btn-info upload_btn padd20" 
+
+  = link_to "Show / Hide Parsing Log", "#", class: "btn btn-info parse_btn"
+  div id="upload_widget" style="display: none;"
+    = render "upload_widget"
+
+div id="parsing_area" style="#{show_hide_log(@log)}"
+  = render "parsing_log"
+hr
+
+h1 Company List
+#companies_list
+  .row
+    p
+      | Loading Companies.... #{image_tag "loader.gif"}
+= hidden_field_tag "current_page", params[:page] || 1
+
+

@@ -1,0 +1,14 @@
+.modal .modal-body {
+    max-height: 420px;
+    max-width: 100%;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+form { display: block; margin: 20px auto; background: #eee; border-radius: 10px; padding: 15px }
+
+.progress { position:relative; width:400px; border: 1px solid #ddd; padding: 1px; border-radius: 3px; }
+.bar { background-color: #B4F5B4; width:0%; height:20px; border-radius: 3px; }
+.percent { position:absolute; display:inline-block; top:3px; left:48%; }
+.padd20 {margin: 20px;}
+.padddown20 {padding-top: 20px;}

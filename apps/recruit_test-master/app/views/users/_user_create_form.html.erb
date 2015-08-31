@@ -1,0 +1,18 @@
+
+<%= form_tag("/api/users.json", method: "post", id: "add_user_form") do %>
+  <%= label_tag(:name, "Email:") %>
+  <%= text_field_tag("email") %><br />
+  <%= label_tag(:name, "User Name:") %>
+  <%= text_field_tag("name") %><br />
+  <%= label_tag(:country, "Country:") %>
+  <%= select_tag 'country', options_for_select([["Canada", "Canada"], ["US", "US"]]) %><br />
+  <%= label_tag(:gender, "Gender:") %>
+  <%= select_tag 'gender', options_for_select([["Male", "Male"], ["Female", "Female"]]) %><br />
+  <%= label_tag(:birth_date, "Birth Date:") %>
+  <%= text_field_tag("birth_date", nil, :data => {:provide => 'datepicker' }, :style => "z-index: 9999 !important;") %><br />
+  <%= label_tag(:password, "Password") %>
+  <%= password_field_tag 'password' %><br />
+  <%= label_tag(:password_confirmation, "Password Confirmation") %>
+  <%= password_field_tag 'password_confirmation' %><br />
+  <%= submit_tag("Add", id: "submit_user") %>
+<% end %>
