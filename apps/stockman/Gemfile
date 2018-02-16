@@ -1,0 +1,13 @@
+source "https://rubygems.org"
+
+gem 'bundler'
+gem 'rake'
+gem 'rspec'
+gem 'pry'
+gem 'vcr'
+gem 'factory_bot'
+gem 'httparty'
+gem 'dotenv'
+gem 'webmock'
+gem 'pony'
+gem 'thor'

@@ -1,0 +1,15 @@
+source 'https://rubygems.org'
+ruby '2.3.3'
+
+gem 'net-sftp'
+gem 'activesupport'
+
+gem 'rspec'
+gem 'rspec-mocks'
+
+gem 'iconv'
+gem 'fake_ftp'
+gem 'dotenv'
+
+gem 'pry'
+gem 'webmock'
